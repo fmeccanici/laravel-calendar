@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace mecctech\LaravelCalendar\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelCalendarCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-calendar';
 
     public $description = 'My command';
 

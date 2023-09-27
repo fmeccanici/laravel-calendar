@@ -1,10 +1,11 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace mecctech\LaravelCalendar\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use mecctech\LaravelCalendar\LaravelCalendarServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +14,16 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'mecctech\\LaravelCalendar\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        $this->setUpDatabase();
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            LaravelCalendarServiceProvider::class,
         ];
     }
 
@@ -28,9 +31,20 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_calendars_table.php';
         $migration->up();
-        */
+    }
+
+    protected function setUpDatabase(): void
+    {
+        $this->app->get('db')->connection()->getSchemaBuilder()->create('test_models', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->foreignId('calendar_id')
+                ->deleteOnCascade()
+                ->updateOnCascade();
+
+            $table->timestamps();
+        });
     }
 }
