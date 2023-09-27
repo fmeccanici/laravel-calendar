@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Database\Eloquent\Collection;
 use mecctech\LaravelCalendar\Models\Calendar;
 use mecctech\LaravelCalendar\Models\Event;
 use mecctech\LaravelCalendar\Tests\Models\TestModel;

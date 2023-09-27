@@ -10,6 +10,7 @@ use mecctech\LaravelCalendar\Database\Factories\CalendarFactory;
 class Calendar extends Model
 {
     use HasFactory;
+
     protected $table = 'calendars';
 
     protected static function newFactory(): CalendarFactory
