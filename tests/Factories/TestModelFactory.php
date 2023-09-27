@@ -3,7 +3,6 @@
 namespace mecctech\LaravelCalendar\Tests\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use mecctech\LaravelCalendar\Database\Factories\CalendarFactory;
 use mecctech\LaravelCalendar\Models\Calendar;
 use mecctech\LaravelCalendar\Tests\Models\TestModel;
 

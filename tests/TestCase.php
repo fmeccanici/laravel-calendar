@@ -4,8 +4,8 @@ namespace mecctech\LaravelCalendar\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
-use Orchestra\Testbench\TestCase as Orchestra;
 use mecctech\LaravelCalendar\LaravelCalendarServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

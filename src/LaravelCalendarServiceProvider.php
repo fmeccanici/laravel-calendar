@@ -2,9 +2,9 @@
 
 namespace mecctech\LaravelCalendar;
 
+use mecctech\LaravelCalendar\Commands\LaravelCalendarCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use mecctech\LaravelCalendar\Commands\LaravelCalendarCommand;
 
 class LaravelCalendarServiceProvider extends PackageServiceProvider
 {

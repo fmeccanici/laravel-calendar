@@ -21,4 +21,3 @@ it('can be recurring', function () {
 it('can be a full day event', function () {
 
 });
-
