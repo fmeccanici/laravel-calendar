@@ -9,8 +9,8 @@ use mecctech\LaravelCalendar\Traits\HasCalendar;
 
 class TestModel extends Model
 {
-    use HasFactory;
     use HasCalendar;
+    use HasFactory;
 
     protected $table = 'test_models';
 
