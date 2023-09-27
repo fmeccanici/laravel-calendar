@@ -8,12 +8,12 @@ use mecctech\LaravelCalendar\Tests\Models\TestModel;
 test('model should have calendar', function () {
     // Given
     $calendar = Calendar::factory()->create();
-    $user = TestModel::factory()->create([
+    $model = TestModel::factory()->create([
         'calendar_id' => $calendar->id,
     ]);
 
     // When & Then
-    expect($user->calendar)->toBeInstanceOf(Calendar::class);
+    expect($model->calendar)->toBeInstanceOf(Calendar::class);
 });
 
 it('should have events', function () {

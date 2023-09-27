@@ -8,17 +8,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use mecctech\LaravelCalendar\Models\Calendar;
 use mecctech\LaravelCalendar\Tests\Factories\TestModelFactory;
+use mecctech\LaravelCalendar\Traits\HasCalendar;
 
 class TestModel extends Model
 {
     use HasFactory;
+    use HasCalendar;
 
     protected $table = 'test_models';
 
-    public function calendar(): BelongsTo
-    {
-        return $this->belongsTo(Calendar::class);
-    }
     protected static function newFactory(): TestModelFactory
     {
         return new TestModelFactory();
