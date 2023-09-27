@@ -4,6 +4,7 @@ namespace mecctech\LaravelCalendar\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use mecctech\LaravelCalendar\Database\Factories\CalendarFactory;
 
 class Calendar extends Model
@@ -14,5 +15,10 @@ class Calendar extends Model
     protected static function newFactory(): CalendarFactory
     {
         return new CalendarFactory();
+    }
+
+    public function events(): HasMany
+    {
+        return $this->hasMany(Event::class);
     }
 }
